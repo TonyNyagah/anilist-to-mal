@@ -5,15 +5,22 @@ query = '''
 query ($username: String) {
   MediaListCollection(userName: $username, type: ANIME) {
     statusLists {
-      progress
-      score
       status
-      notes
+      score(format: POINT_10)
+      progress
+      progressVolumes
       repeat
+      priority
+      notes
+      startedAt { year, month, day }
+      completedAt { year, month, day }
       media {
         idMal
         episodes
         title { romaji }
+        chapters
+        volumes
+        siteUrl
       }
     }
   }
@@ -22,7 +29,7 @@ query ($username: String) {
 
 # Define our query variables and values that will be used in the query request
 variables = {
-  'username': 'nathan'
+  'username': 'ynot254'
 }
 
 url = 'https://graphql.anilist.co'
