@@ -9,4 +9,4 @@ Install Python Requests with `pip3 install requests`.
 Once both are installed, run the app with `python3 main.py` and follow the instructions!
 
 ## Issues
-Feel free to leave an issue on Github or [tweet at me](https://twitter.com/nathanwentworth)
+Feel free to leave an issue on Github or [tweet at me](https://twitter.com/NyagahTony)
