@@ -64,8 +64,13 @@ def getAnilistData():
 	jsonData = response.json()
 	listEntries = jsonData['data']['MediaListCollection']['lists']
 	# prettified results for easy reading
-	readableData = json.dumps(listEntries, indent=2, sort_keys=True) 
-	# print(readableData)
+	readableData = json.dumps(listEntries, indent=2, sort_keys=True)
+	# push the juson result to a file for data stuff
+	j = open('my-anilist-anime-export.json', 'w+')
+	j.write(readableData)
+	j.close() 
+	#print(readableData)
+
 	printAnilistData(listEntries)
 	convertAnilistData(listEntries)
 
@@ -193,7 +198,7 @@ def convertAnilistData(data):
 	writeToXMLFile(output)
 
 def writeToXMLFile(output):
-	f = open('my-anilist-export.xml', 'w+')
+	f = open('my-anilist-anime-export.xml', 'w+')
 	f.write(output)
 	f.close()
 
